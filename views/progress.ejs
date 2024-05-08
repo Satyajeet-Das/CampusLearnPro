@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("partials/head.ejs") %>
+  </head>
+  <body>
+    <%-include("partials/header.ejs") %>
+    <%-include("partials/sidebar.ejs") %>
+    <main>
+      <h2 style="margin-top: 30px;">Student Attendance</h2>
+      <% if(user.isadmin){ %>
+      <button class="present">Present All</button>
+      <button class="absent">Absent All</button>
+      <button class="edit">Edit</button>
+      <button class="save">Save</button>
+      <% } %> 
+
+      <div class="attendance">
+        <table class="wp-table">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Class Attended<br/>(Out of <%= studentAtt[0].total_classes %>)</th>
+            <th>Attendance</th>
+          </tr>
+
+          <% let i = 1; %>
+          <% studentAtt.forEach(att => { %>
+          <tr>
+            <td><%= i %></td>
+            <td><%= att.name %></td>
+            <td>
+              <% if (user.isadmin){ %>
+              <button class="minus">-</button>
+              <% } %>
+              <span class="attended"><%= att.classes_attended %></span>
+              <span>/</span>
+              <span class="total"><%= att.total_classes %></span>
+              <% if (user.isadmin){ %>
+              <button class="plus">+</button>
+              <% } %>
+            </td>
+            <% let percent = (att.classes_attended/ att.total_classes)*100 %>
+            <td><%= percent %>%</td>
+            <% i++; %>
+          </tr> 
+          <% }); %>
+
+          <!-- <tr>
+            <td>1</td>
+            <td>Satyajeet</td>
+            <td>
+              <button class="minus">-</button>
+              <span class="attended">19</span>
+              <span>/</span>
+              <span class="total">38</span>
+              <button class="plus">+</button>
+            </td>
+            <td>50%</td>
+          </tr> -->
+    
+          
+        </table>
+      </div>
+      <% if (user.isadmin){ %>
+      <p>Total no of students present: </p>
+      <p>Total no of students absent: </p>
+      <% } %>
+
+    </main>
+    <script src="js/progress.js"></script>
+  </body>
+</html>

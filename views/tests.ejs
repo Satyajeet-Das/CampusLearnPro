@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("partials/head.ejs") %>
+  </head>
+  <body>
+    <%-include("partials/header.ejs") %>
+    <%-include("partials/sidebar.ejs") %>
+    <main>
+      <h2 style="margin-top: 30px;">Student Tests</h2>
+      <div class="attendance">
+        <table class="wp-table">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Class Attended<br/>(Out of 38)</th>
+            <th>Attendance</th>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>Satyajeet</td>
+            <td>
+              <button class="minus">-</button>
+              <span class="attended">19</span>
+              <span>/</span>
+              <span class="total">38</span>
+              <button class="plus">+</button>
+            </td>
+            <td>50%</td>
+          </tr>
+    
+          
+        </table>
+      </div>
+    
+    </main>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("partials/head.ejs") %>
+    <style>
+      .open-popup {
+        width: 92%;
+        margin-top: 20px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <%-include("partials/header.ejs") %>
+    <%-include("partials/sidebar.ejs") %>
+    <main>
+      <%-include("partials/add_resources.ejs")  %>
+      <h2 style="padding: 18px;">Resources</h2>
+      <div class="content-grid">
+        <!-- <div>
+              <img src="/images/video.png" class="course-image"></img>
+              <div class="course-description">
+                  <div class="course-title">How to Take Input in a String?</div>
+                  <div class="course-unit">String</div>
+              </div>
+          </div> -->
+       
+          <% resources.forEach(resource => {%>
+            <div>
+              <% if(resource.type == "video"){ %>
+                  <img src="/images/video.png" class="course-image"></img>
+              <% }else if(resource.type == "document"){%>
+                <img src="/images/document.png" class="course-image"></img>
+              <% }else if(resource.type == "web"){ %>
+                <img src="/images/web.png" class="course-image"></img>
+              <% } %>
+              
+              <a style="text-decoration: none;" href="<%= resource.link %>"><div class="course-description">
+                  <div class="course-title"><%= resource.name %></div>
+                  <div class="course-unit"><%=resource.subtile %></div>
+                  <!-- <div style="background-color: black;"></div> -->
+              </div></a>
+          </div>
+          <% }); %>
+      </div>
+    </main>
+    <script>
+      function togglePopup() { 
+        const overlay = document.getElementById('popupOverlay'); 
+        overlay.classList.toggle('show'); 
+      } 
+    </script>
+  </body>
+</html>

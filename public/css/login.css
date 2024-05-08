@@ -1,0 +1,147 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto, Arial;
+}
+
+.login {
+  display: flex;
+}
+
+.login-data {
+  flex: 1.5;
+  height: 100vh;
+}
+
+.graphic-container {
+  flex: 1.5;
+}
+
+.login-graphic {
+  object-fit: cover; /* Fill container while potentially cropping */
+  height: 100vh;
+  width: 100vh;
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+  max-height: 100%; /* Ensure image doesn't exceed container height */
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  margin-left: 100px;
+}
+
+li {
+  padding: 20px 40px;
+  border: 1px solid rgb(0, 115, 255);
+  margin: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 40px;
+  transition: background-color 0.15s;
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+li:hover {
+  background-color: rgb(0, 115, 255);
+  cursor: pointer;
+  color: white;
+}
+
+li.active {
+  background-color: rgb(0, 115, 255);
+  color: white;
+}
+
+h1,
+h3 {
+  padding: 20px;
+  text-align: left;
+  padding-bottom: 0px;
+}
+
+h3 {
+  padding-top: 5px;
+  font-size: 12px;
+}
+
+h2 {
+  padding: 20px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.details {
+  padding: 10px 100px;
+  padding-right: 0px;
+  font-size: 20px;
+}
+
+.info {
+  display: none;
+  text-align: center;
+}
+
+.in {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 20px;
+}
+
+label,
+input {
+  margin: 6px 0px;
+}
+
+input {
+  display: block;
+  width: 400px;
+  margin: 0px;
+  margin-bottom: 17px;
+  font-size: 20px;
+  border: 1px solid rgb(140, 140, 140);
+  padding: 11px;
+  border-radius: 3px;
+}
+
+.sign {
+  background-color: #1b4079;
+  color: white;
+  margin-left: 20px;
+  width: 426px;
+  margin-top: 0px;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-style: none;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+
+.sign:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+label {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.new {
+  width: 426px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+a {
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
+}

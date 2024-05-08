@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("partials/head.ejs") %>
+    <style>
+      .open-popup {
+        width: 92%;
+        margin-left: 30px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <%-include("partials/sidebar.ejs") %>
+    <main>
+      <div class="course-name">
+        <p><%= currentCourse.title %></p>
+      </div>
+      <% if(user.isadmin){ %> <%-include("partials/add_units.ejs") %> <% } %>
+      <div class="units">
+        <% let i = 1 %>
+        <% courseUnits.forEach(unit => {%>
+          <div class="unit" onclick="window.location.href = '/courses/view<%= currentCourse.id %>/unit<%= unit.id %>'">Unit <%= i %>. <%=unit.unit_name%></div>
+        <%i++%>
+      <%});%>
+      </div>
+    </main>
+    <script>
+      // const units = document.querySelectorAll(".units");
+      // for (let i = 0; i < units.length; i++) {
+      //   units[i].addEventListener("click", () => {
+      //     window.location.href = `/courses/view/unit`;
+      //   });
+      // }
+
+      function togglePopup() {
+        const overlay = document.getElementById("popupOverlay");
+        overlay.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

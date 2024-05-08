@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login">
+        <div class="login-data">
+            <div class="nav">
+                <div id="Student" class="details">
+                    <h1>Welcome to CampusLearnPro!</h1>
+                    <h3>A Place to gain and improve your skills.</h3>
+    
+                    <h2>Register Your Account</h2>
+                    <div class="form">
+                        <form action="/studentRegister" method="POST">
+                          <div class="in">
+                            <label for="name">Name</label>
+                            <input type="text" placeholder="Name" name="name" required/>
+                            <label for="username">Username</label>
+                            <input type="text" placeholder="Username" name="username" maxlength="100" onkeypress="return AvoidSpace(event)" required/>
+                            <label for="password">Password</label>
+                            <input type="password" placeholder="Password" name="password" maxlength="100" required/>
+                            <!-- <label for="confirm">Confirm Password</label>
+                            <input type="password" placeholder="Confirm Password" name="confirm" maxlength="100" required/> -->
+                          </div>
+                          <button type="submit" class="sign">Register</button>
+                        </form>
+
+                        <p class="new"><a onclick="window.location.href='/'">Already Registered? Login Now</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graphic-container">
+            <img src="../images/side-graphic.png" alt="side-graphic" class="login-graphic">
+        </div>
+    </div>
+    <script>
+        function AvoidSpace(event) {
+            var k = event ? event.which : window.event.keyCode;
+            if (k == 32) return false;
+        }
+    </script>
+</body>
+</html>

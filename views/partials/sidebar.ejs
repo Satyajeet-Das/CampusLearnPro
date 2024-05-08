@@ -1,0 +1,76 @@
+<div class="name"><img src="/images/logo.jpg" alt="" />CampusLearnPro</div>
+
+<nav class="sidebar">
+    <div class="info-grid">
+      <div class="picture">
+        <img class="profile" src="/images/channel-1.jpeg" alt="channel-1" />
+      </div>
+      <div class="user">
+        <p class="title"><%= user.name %></p>
+        <p class="year">
+          <% if(user.isadmin) {%>
+            Admin
+          <% }else{ %>
+            BTech Student
+          <% } %>
+        </p>
+      </div>
+    </div>
+
+    <div id="courses" class="link active" onclick="window.location.href='/courses'">
+      <!-- <img src="icons/home.svg" alt="home"> -->
+      <div>
+        <% if(!user.isadmin) {%>
+          My Courses
+        <% }else{ %>
+          Manage Courses
+        <% } %>
+
+      </div>
+    </div>
+    <div id="clubs" class="link" onclick="window.location.href='/clubs'">
+      <!-- <img src="icons/explore.svg" alt="explore"> -->
+      <div>
+        <% if(!user.isadmin) {%>
+          My Clubs
+        <% }else{ %>
+          Manage Clubs
+        <% } %>
+      </div>
+    </div>
+    <div id="progress" class="link" onclick="window.location.href='/progress'">
+      <!-- <img src="icons/subscriptions.svg" alt="subscriptions"> -->
+      <div>
+        <% if(!user.isadmin) {%>
+          Progress Tracker
+        <% }else{ %>
+          Students' Progress
+        <% } %>
+      </div>
+    </div>
+    <div id="tests" class="link" onclick="window.location.href='/tests'">
+      <!-- <img src="icons/originals.svg" alt="originals"> -->
+      <div>
+        <% if(!user.isadmin) {%>
+          My Tests
+        <% }else{ %>
+          Manage Tests
+        <% } %>
+      </div>
+    </div>
+    <div id="resources" class="link" onclick="window.location.href='/resources'">
+      <!-- <img src="icons/youtube-music.svg" alt="youtube-music"> -->
+      <div>
+        <% if(!user.isadmin) {%>
+          Resources
+        <% }else{ %>
+          Upload Resources
+        <% } %>
+      </div>
+    </div>
+    <!-- <div id="help" class="link" onclick="window.location.href='/help'">
+      <div>Help Center</div>
+    </div> -->
+    <script src="/js/sidebar.js"></script>
+    <button onclick="window.location.href='/logout'">Log Out</button>
+  </nav>

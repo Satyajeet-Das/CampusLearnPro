@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("partials/head.ejs") %>
+    <style>
+      .open-popup {
+        width: 92%;
+        margin-left: 30px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <%-include("partials/sidebar.ejs") %>
+    <main>
+      <div class="course-name">
+        <p><%= currentCourse.title%></p>
+      </div>
+      <% if(user.isadmin){ %> <%-include("partials/add_material.ejs") %> <% } %>
+      <h2 class="unit-name"><%= currentUnit.unit_name %></h2>
+      <div class="content-grid">
+        <% unitMaterials.forEach(material => {%>
+          <div>
+            <% if(material.type == "video"){ %>
+                <img src="/images/video.png" class="course-image"></img>
+            <% }else if(material.type == "document"){%>
+              <img src="/images/document.png" class="course-image"></img>
+            <% }else if(material.type == "web"){ %>
+              <img src="/images/web.png" class="course-image"></img>
+            <% } %>
+            
+            <a style="text-decoration: none;" href="<%= material.link %>"><div class="course-description">
+                <div class="course-title"><%= material.name %></div>
+                <div class="course-unit"><%= currentUnit.unit_name %></div>
+                <!-- <div style="background-color: black;"></div> -->
+            </div></a>
+        </div>
+        <% }); %>
+
+        <!-- <div>
+            <img src="/images/video.png" class="course-image"></img>
+            <div class="course-description">
+                <div class="course-title">How to Take Input in a String?</div>
+                <div class="course-unit">String</div>
+            </div>
+        </div>
+        <div>
+            <img src="/images/document.png" class="course-image"></img>
+            <div class="course-description">
+                <div class="course-title">How to Output Strings?</div>
+                <div class="course-unit">Strings</div>
+            </div>
+        </div>
+        <div>
+            <img src="/images/web.png" class="course-image"></img>
+            <div class="course-description">
+                <div class="course-title">How to concatenate strings?</div>
+                <div class="course-unit">Strings</div>
+            </div>
+        </div> -->
+      </div>
+    </main>
+    <script>
+      function togglePopup() { 
+        const overlay = document.getElementById('popupOverlay'); 
+        overlay.classList.toggle('show'); 
+      } 
+    </script>
+  </body>
+</html>

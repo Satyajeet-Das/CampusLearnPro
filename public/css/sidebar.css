@@ -1,0 +1,93 @@
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    top: 70px;
+    width: 270px;
+    background-color: white;
+    z-index: 200;
+    padding-top: 5px;
+  }
+  
+  .link {
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 50px;
+    cursor: pointer;
+  }
+  
+  .link:hover {
+    border-radius: 0px 20px 20px 0;
+    background-color: rgb(235, 235, 235);
+  }
+
+  .active {
+    border-radius: 0px 20px 20px 0;
+    background-color: rgb(235, 235, 235);
+  }
+  
+  .link img {
+    height: 24px;
+    margin-bottom: 4px;
+  }
+  
+  .link div {
+    font-size: 15px;
+  }
+  
+  /*User*/
+  
+  .title {
+    margin-top: 0px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .info-grid {
+    display: flex;
+    padding-left: 50px;
+    margin: 20px 0px;
+  }
+  
+  .picture {
+    width: 50px;
+    vertical-align: top;
+  }
+  
+  .info {
+    max-width: 200px;
+  }
+  
+  .profile {
+    width: 36px;
+    border-radius: 50%;
+  }
+  
+  .year {
+    font-size: 12px;
+  }
+  
+  nav button {
+    margin-top: 30px;
+    margin-left: 49px;
+  
+    background-color: #1b4079;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-style: none;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+  }
+  
+  
+  main {
+      margin-left: 300px;
+  }

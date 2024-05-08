@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login">
+        <div class="login-data">
+            <div class="nav">
+                <ul>
+                    <li class="tablinks" onclick="openPage(event, 'Student')" id="defaultOpen">Student</li>
+                    <li class="tablinks" onclick="openPage(event, 'Admin')">Admin</li>
+                </ul>
+                
+                <div id="Student" class="details">
+                    <h1>Welcome Student!</h1>
+                    <h3>Enter to get access to course content and boost your learning experience.   </h3>
+    
+                    <h2>Login to Your Account</h2>
+                    <div class="form">
+                        <form action="/studentLogin" method="POST">
+                          <div class="in">
+                            <label for="username">Username</label>
+                            <input type="text" placeholder="Username" name="username" maxlength="100" onkeypress="return AvoidSpace(event)" required/>
+                            <label for="password">Password</label>
+                            <input type="password" placeholder="Password" name="password" maxlength="100" required/>
+                          </div>
+                          <button type="submit" class="sign">Log In</button>
+                        </form>
+                    </div>
+
+                    <p class="new"><a onclick="window.location.href='/register'">New Student? Join now</a></p>
+                </div>
+
+                <div id="Admin" class="details">
+                    <h1>Welcome Admin!</h1>
+                    <h3>Enter to get access to course content and boost your learning experience.   </h3>
+    
+                    <h2>Login to Your Account</h2>
+                    <div class="form">
+                        <form action="/adminLogin" method="POST">
+                          <div class="in">
+                            <label for="username">Username</label>
+                            <input type="text" placeholder="Username" name="username" maxlength="100" onkeypress="return AvoidSpace(event)" required/>
+                            <label for="password">Password</label>
+                            <input type="password" placeholder="Password" name="password" maxlength="100" required/>
+                          </div>
+                          <button type="submit" class="sign">Log In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graphic-container">
+            <img src="/images/side-graphic.png" alt="side-graphic" class="login-graphic">
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html>

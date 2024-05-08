@@ -1,0 +1,43 @@
+<button class="open-popup" onclick="togglePopup()">Add Material</button>
+
+<div id="popupOverlay" class="overlay-container">
+  <div class="popup-box">
+    <h2 style="color: green">Add Material</h2>
+    <form class="form-container" action="/addMaterial" method="post" enctype="multipart/form-data">
+      <label class="form-label" for="material-name"> Material Name: </label>
+      <input
+        class="form-input"
+        type="text"
+        placeholder="Enter Material Name"
+        id="material-name"
+        name="material-name"
+        required
+      />
+
+      <label class="form-label" for="material-type"> Material Type: </label>
+      <select name="material-type" id="material-type" class="form-input">
+        <option value="video">Video</option>
+        <option value="Web">Web</option>
+        <option value="document">Document</option>
+      </select>
+
+      <label class="form-label" for="material-link"> Material Link: </label>
+      <!-- <input
+        class="form-input"
+        type="text"
+        placeholder="Enter Material Link"
+        id="material-link"
+        name="material-link"
+      /> -->
+
+      <input type="file" id="material-link" name="material-link" />
+
+      <input style="visibility: hidden;" type="number" id="course-id" value="<%= currentCourse.id%>" name="course-id">
+      <input style="visibility: hidden;" type="number" id="unit-id" value="<%= currentUnit.id%>" name="unit-id">
+      
+      <button class="add" type="add">Add</button>
+    </form>
+
+    <button class="close-popup" onclick="togglePopup()">Close</button>
+  </div>
+</div>

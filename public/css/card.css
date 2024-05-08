@@ -1,0 +1,96 @@
+/*Cards*/
+.info {
+    text-align: center;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    padding: 30px;
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+  
+  @media only screen and (min-width: 1061px) and (max-width: 1350px) {
+    .grid{
+      grid-template-columns: repeat(3, 250px);
+    }
+  }
+  
+  @media only screen and (max-width: 1060px) {
+    .grid{
+      grid-template-columns: repeat(2, 250px);
+    }
+  }
+  
+  .card {
+    /* Add shadows to create the "card" effect */
+    height: 180px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.668);
+    cursor: pointer;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+  .container > h4 {
+    padding-top: 10px;
+    height: 37px
+  }
+  
+  .container > h4, .container > p,.container > button {
+    margin-top: 15px;
+  }
+  
+  .join {
+    background-color: rgb(10, 102, 194);
+    color: white;
+    border-style: none;
+    padding: 10px 15px;
+    border-radius: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  
+  .join:hover {
+    background-color: rgb(9, 90, 170);
+  }
+
+  .view {
+    background-color: rgb(51, 179, 87);
+    color: white;
+    border-style: none;
+    padding: 10px 15px;
+    border-radius: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  
+  .view:hover {
+    background-color: rgb(43, 151, 74);
+  }
+  .manage {
+    background-color: rgb(203, 206, 30);
+    color: white;
+    border-style: none;
+    padding: 10px 15px;
+    border-radius: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  
+  .manage:hover {
+    background-color: rgb(223, 226, 33);
+  }

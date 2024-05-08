@@ -1,0 +1,50 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto, Arial;
+}
+
+
+body {
+  background-color: rgb(228, 228, 228);
+}
+
+.name {
+  position: fixed;
+  background-color: rgb(5, 113, 202);
+  color: white;
+  font-size: 23px;
+  padding: 17px;
+  top: 0px;
+  padding-bottom: 30px;
+  font-family: cursive;
+}
+
+.name img {
+  vertical-align: top;
+  height: 40px;
+}
+
+.welcome {
+  padding-top: 25px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: rgb(5, 113, 202);
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.welcome p {
+  margin: 10px;
+}
+
+.course-group {
+  margin-top: 40px;
+  display: flex;
+  /* flex-direction: column;
+  justify-items: center; */
+  align-items: center;
+
+}

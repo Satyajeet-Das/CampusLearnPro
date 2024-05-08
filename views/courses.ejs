@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("partials/head.ejs") %>
+  </head>
+  <body>
+    <%-include("partials/header.ejs") %> 
+    <%-include("partials/sidebar.ejs") %>
+    <main>
+      <% if(!user.isadmin) { %>
+      <div class="course-group">
+        <h2>My Courses</h2>
+      </div>
+      <div id="courses" class="info">
+        <div class="my grid">
+          <!-- <div class="card">
+            <div class="container">
+              <h4><b>Introduction to Computer Science</b></h4>
+              <p>Janhvi Tiwari</p>
+              <button
+                class="view"  
+                onclick="window.location.href='/courses/view'"
+              >
+                View Course
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="course-group">
+      <h2>Running Courses</h2>
+
+      </div>
+      <div id="courses" class="info">
+        <div class="running grid">
+
+          <%
+          studentCourses.forEach(course => {%>
+          <div class="card">
+            <div class="container">
+              <h4><b><%= course.title %></b></h4>
+              <p><%= course.teacher_name %></p>
+              <button class="join" onclick="window.location.href='/courses/view<%=course.id%>'">Join Course</button>
+            </div>
+          </div>
+        <%});%>
+
+          
+      <% } %>
+
+      <% if (user.isadmin) {%>
+      <div class="course-group">
+        <h2>Manage Courses</h2>
+        <%-include("partials/add_courses.ejs") %>
+      </div>
+      <div id="courses" class="info">
+        <div class="running grid">
+          <%
+            adminCourses.forEach(course => {%>
+            <div class="card">
+              <div class="container">
+                <h4><b><%= course.title %></b></h4>
+                <p><%= course.teacher_name %></p>
+                <button class="manage" onclick="window.location.href='/courses/view<%=course.id%>'">Manage Course</button>
+              </div>
+            </div>
+          <%});%>
+        </div>
+      </div>
+      <% } %>
+    </main>
+    <script src="js/courses.js"></script>
+  </body>
+</html>

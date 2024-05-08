@@ -1,0 +1,12 @@
+<header>
+  <!-- <div class="name"><img src="../images/logo.jpg" alt="" />CampusLearnPro</div> -->
+  <div class="welcome">
+    <% if (locals.user){ %> 
+      <% if (user && user.isadmin) { %>
+        <h1>Welcome, <%= user.name.split(" ")[0] %>(Admin)!</h1>
+    <% } else { %>
+      <h1>Welcome, <%= user.name.split(" ")[0]%>!</h1>
+    <% } %> <% } %>
+    <p>Your education is your power. So get ready to Learn</p>
+  </div>
+</header>

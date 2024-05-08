@@ -1,0 +1,22 @@
+<button class="open-popup" onclick="togglePopup()">Add Unit</button>
+
+<div id="popupOverlay" class="overlay-container">
+  <div class="popup-box">
+    <h2 style="color: green">Add Unit</h2>
+    <form class="form-container" action="/addUnits" method="post">
+      <label class="form-label" for="unit-name"> Unit Name: </label>
+      <input
+        class="form-input"
+        type="text"
+        placeholder="Enter Unit Name"
+        id="unit-name"
+        name="unit-name"
+        required
+      />
+      <input style="visibility: hidden;" type="number" id="course-id" value="<%= currentCourse.id%>" name="course-id">
+      <button class="add" type="add">Add</button>
+    </form>
+
+    <button class="close-popup" onclick="togglePopup()">Close</button>
+  </div>
+</div>

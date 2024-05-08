@@ -1,0 +1,32 @@
+<button class="open-popup" onclick="togglePopup()">Add Courses</button>
+
+<div id="popupOverlay" class="overlay-container">
+  <div class="popup-box">
+    <h2 style="color: green">Add Course</h2>
+    <form class="form-container" action="/addCourses" method="post">
+      <label class="form-label" for="course-name"> Course Name: </label>
+      <input
+        class="form-input"
+        type="text"
+        placeholder="Enter Course Name"
+        id="course-name"
+        name="course-name"
+        required
+      />
+
+      <label class="form-label" for="teacher-name">Teacher Name:</label>
+      <input
+        class="form-input"
+        type="text"
+        placeholder="Enter Teacher Name"
+        id="teacher-name"
+        name="teacher-name"
+        required
+      />
+
+      <button class="add" type="add">Add</button>
+    </form>
+
+    <button class="close-popup" onclick="togglePopup()">Close</button>
+  </div>
+</div>

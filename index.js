@@ -10,6 +10,7 @@ import env from "dotenv";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import {initializeApp} from "firebase/app";
+import 'dotenv/config';
 
 // import { getAnalytics } from "firebase/analytics";
 
@@ -29,7 +30,7 @@ env.config();
 
 app.use(
   session({
-    secret: "TOPSECRETWORD",
+    secret: process.env.SECRET-KEY,
     resave: false,
     saveUninitialized: false,//true
   })
@@ -37,7 +38,7 @@ app.use(
 
 // app.use(cookieSession({
 //   name: 'session',
-//   keys: ['TOPSECRETWORD'],
+//   keys: [''],
 //   maxAge: 60 * 60 * 1000 // 24 hours
 // }));
 
@@ -61,13 +62,13 @@ db.connect();
 // Initialize Firebase
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAl7Qva-JwDaMOcdKXQnqyQsmJwhpwaD4M",
-  authDomain: "e-learning-platform-93488.firebaseapp.com",
-  projectId: "e-learning-platform-93488",
-  storageBucket: "e-learning-platform-93488.appspot.com",
-  messagingSenderId: "519068910735",
-  appId: "1:519068910735:web:13c202b8bf76009f4a1cfa",
-  measurementId: "G-76V7XCX0CP"
+  apiKey: process.env.API-KEY,
+  authDomain: process.env.AUTH-DOMAIN,
+  projectId: process.env.PROCESS-ID,
+  storageBucket: process.env.STORAGE-BUCKET,
+  messagingSenderId: process.env.MSG-ID,
+  appId: process.env.APP-ID,
+  measurementId: process.env.MEASURE-ID
 };
 
 const config = initializeApp(firebaseConfig);
